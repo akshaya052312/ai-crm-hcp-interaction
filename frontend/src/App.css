@@ -1,0 +1,54 @@
+/* App-level styles */
+.app {
+  min-height: 100vh;
+  background: #f3f4f6;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: 1.85fr 1fr;
+  min-height: 100vh;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  align-items: flex-start;
+}
+
+.app-left-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  border-radius: 0;
+}
+
+.app-right-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  max-height: 90vh;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .app-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    height: auto;
+  }
+
+  .app-right-panel {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .app-left-panel,
+  .app-right-panel {
+    border-radius: var(--radius-md);
+  }
+}
